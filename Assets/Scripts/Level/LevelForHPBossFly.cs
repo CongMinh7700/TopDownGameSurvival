@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class LevelForHPBossFly : LevelForHPBoss
 {
-  
-    protected override void ResetValue()
-    {
-        this.baseNumber = 50;
-    }
+
     
 }

@@ -9,7 +9,8 @@ public class LevelForDamageEnemy : LevelDouble
 
     protected override void ResetValue()
     {
-        this.baseNumber = 2;
+        base.ResetValue();
+        this.baseNumber = 1;
     }
 
     protected override void OnEnable()

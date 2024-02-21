@@ -16,7 +16,7 @@ public class BossMovement : EnemyMovement
     }
     protected override void ResetValue()
     {
-        this.moveSpeed = 1f;
+        this.moveSpeed = 0.75f;
     }
     protected virtual void LoadBossSkill()
     {

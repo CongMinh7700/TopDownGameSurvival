@@ -5,7 +5,7 @@ using UnityEngine;
 public class ImpactForBoss : BulletImpact
 {
     [SerializeField] protected BossDamageSender bossDamageSender;
-    protected virtual void Start()
+    protected override void Start()
     {
         sphereCollider.radius = 1.3f;
 

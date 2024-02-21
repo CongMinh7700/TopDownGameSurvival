@@ -10,6 +10,11 @@ public class ImpactForEnemy : BulletImpact
         base.LoadComponents();
         this.LoadEnemyDamageSender();
     }
+    protected override void ResetValue()
+    {
+        this.sphereCollider.radius = 0.5f;
+
+    }
     protected override void Start()
     {
         this.sphereCollider.radius = 0.5f;

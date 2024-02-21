@@ -10,7 +10,7 @@ public class LevelForHPBoss : LevelDouble
 
     protected override void ResetValue()
     {
-        this.baseNumber = 100;
+        this.baseNumber = 1;
     }
     protected override void OnEnable()
     {
@@ -32,7 +32,7 @@ public class LevelForHPBoss : LevelDouble
         int level = MapCtrl.Instance.MapLevel.CurrentLevel + this.levelOffset;
         this.SetLevel(level);
         this.bossDamageReceiver.SetHpMax(this.number);
-        this.bossDamageReceiver.SetCurrentHp(this.number);
+        
 
     }
 }

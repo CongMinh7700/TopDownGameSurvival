@@ -9,9 +9,9 @@ public class BossMeleeSkill : GameMonoBehaviour
     [Header("Boss Roll")]
     [SerializeField] protected float rollTime = 0.5f;
     [SerializeField] protected float rollDelay = 5f;
-    [SerializeField] protected float rollBoost = 0.25f;
     [SerializeField] protected float damageBoost = 0.01f;
-    [SerializeField] protected float moveSpeed  = 1f;
+    [SerializeField] protected float moveSpeed  = 0.75f;
+    [SerializeField] protected float newSpeed  = 25f;
 
     [SerializeField] protected bool isRoll = false;
     [SerializeField] protected bool canRoll = false;
@@ -60,9 +60,8 @@ public class BossMeleeSkill : GameMonoBehaviour
             animator.SetBool("Roll", true);
             isRoll = true;
             this.rollDelay = 5f;
-            this.moveSpeed += rollBoost;
-            this.bossMovement.SetMoveSpeed(moveSpeed);
-    
+
+            this.bossMovement.SetMoveSpeed(this.newSpeed);
             this.bossDamageSender.IncreaseDamageSkill(damageBoost);
         }
         this.RollCoolDown();
@@ -82,8 +81,7 @@ public class BossMeleeSkill : GameMonoBehaviour
             this.rollTime -= Time.deltaTime;
             if (rollTime <= 0)
             {
-                this.bossMovement.SetMoveSpeed(1f);
-                this.moveSpeed = 1f;
+                this.bossMovement.SetMoveSpeed(this.moveSpeed);
                 isRoll = false;
                 canRoll = false;
                 this.bossDamageSender.ResetDamageSkill();

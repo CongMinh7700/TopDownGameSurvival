@@ -47,5 +47,13 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     {
         return FxSpawner.hurtSound;
     }
-   
+    public virtual void SetHpMax(double hpMax)
+    {
+        this.hpMax = hpMax * shootableObjectCtrl.ShootableObject.hpMax; ;
+        this.SetCurrentHp(this.hpMax);
+    }
+    public virtual void SetCurrentHp(double currentHp)
+    {
+        this.currentHp = currentHp;
+    }
 }

@@ -76,13 +76,7 @@ public abstract class DamageReceiver : GameMonoBehaviour
         this.OnDead();
 
     }
-    public virtual void SetHpMax(double hpMax)
-    {
-        this.hpMax = hpMax;
-    }public virtual void SetCurrentHp(double currentHp)
-    {
-        this.currentHp = currentHp;
-    }
+   
     public abstract void OnDead();
 
 }

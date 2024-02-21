@@ -6,6 +6,11 @@ public class LevelForHP: LevelDouble
 {
     [Header("Level For HP")]
     public EnemyDamageReceiver enemyDamageReceiver;
+    protected override void ResetValue()
+    {
+        base.ResetValue();
+        this.baseNumber = 1;
+    }
 
     protected override void OnEnable()
     {
